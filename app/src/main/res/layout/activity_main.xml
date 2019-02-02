@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editText_city"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edittext_border"
+            android:gravity="center"
+            android:hint="Enter a city name" />
+
+        <Button
+            android:id="@+id/btn_proceed"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_border"
+            android:padding="5dp"
+            android:text="Proceed"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:layout_centerHorizontal="true"
+                android:textSize="30sp"
+                android:id="@+id/tv_city"
+                android:layout_marginTop="50dp"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/weather_icon_img"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_city"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="35sp"
+                android:id="@+id/tv_temp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/weather_icon_img"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginTop="20dp"
+                android:textSize="25sp"
+                android:id="@+id/tv_min_temp"
+                android:layout_below="@id/tv_temp"
+                android:layout_toLeftOf="@id/weather_icon_img"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/tv_max_temp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/weather_icon_img"
+                android:textSize="25sp"
+                android:layout_below="@id/tv_temp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/tv_cloud_desc"
+                android:layout_centerHorizontal="true"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/tv_max_temp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_cloud_desc">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forecast"
+                    android:id="@+id/tv_forecast"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="25sp"
+                    android:visibility="gone"
+                    android:layout_below="@id/tv_cloud_desc"
+                    />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:id="@+id/btn_forecast"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_arrow_forward_black_24dp"
+                    android:background="@drawable/button_border"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
